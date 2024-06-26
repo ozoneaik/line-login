@@ -10,7 +10,7 @@ function LineLogin() {
             .then(()=>{
                 if (!liff.isLoggedIn()){
                     liff.login({
-                        redirectUri : 'https://www.google.com',
+                        //parameter
                     });
                 }
             })
