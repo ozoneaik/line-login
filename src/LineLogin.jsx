@@ -9,9 +9,16 @@ function LineLogin() {
         })
             .then(()=>{
                 if (!liff.isLoggedIn()){
-                    liff.login({
-                        //parameter
-                    });
+                    // ตรวจสอบว่าอุปกรณ์เป็นมือถือหรือไม่
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                    if (isMobile) {
+                        // เปิดแอปพลิเคชัน LINE โดยใช้ schema URL
+                        window.location.href = "line://app/2004757924-K09NzeWv";
+                    } else {
+                        // ใช้ liff.login สำหรับผู้ใช้ที่ไม่ใช่มือถือ
+                        liff.login();
+                    }
                 }
             })
             .catch((err)=>{
