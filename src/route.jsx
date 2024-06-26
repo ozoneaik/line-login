@@ -4,5 +4,5 @@ import Test from "./Test.jsx";
 
 export const routes = createBrowserRouter([
     {path: '/',element: <App/>},
-    {path: '/',element: <Test/>},
+    {path: '/test',element: <Test/>},
 ])
